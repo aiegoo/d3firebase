@@ -6,7 +6,9 @@ const svg = d3.select('svg');
 
 const rect = svg.select('rect')
      .data(data)
-     .attr('width', function(){ return 400})
-     .attr('height', 100)
-     .attr('fill', 'pink');
+     .attr('width', function(d){ 
+          return d.width  
+     })
+     .attr('height', function(d){ return d.height })
+     .attr('fill', function(d){ return d.fill });
 console.log(rect);
