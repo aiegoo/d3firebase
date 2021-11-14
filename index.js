@@ -4,8 +4,9 @@ const data = [
 
 const svg = d3.select('svg');
 
-svg.select('rect')
+const rect = svg.select('rect')
      .data(data)
      .attr('width', 200)
      .attr('height', 100)
      .attr('fill', 'pink');
+console.log(rect);
