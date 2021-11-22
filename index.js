@@ -22,10 +22,11 @@ console.log(rect);
 
 // Enter selection, with virtual ele to match missling rect objects but to enter attr to the dome
 const rects =svg.selectAll('rect')
-          .data(data)
-          .attr('width', d => d.width)
-          .attr('height', d => d.height)
-          .attr('fill', d => d.fill)
+          .data(data); //this will create data-binding
+          
+rects.attr('width', d => d.width)
+.attr('height', d => d.height)
+.attr('fill', d => d.fill)
 
 console.log(rects)
 
