@@ -17,5 +17,13 @@ const rect = svg.select('rect')
      .attr('height', function(d){ 
           console.log(this)
           return d.height })
-     .attr('fill', d => d.fill ); // when return value is in the same line like here, simpler coding is possible; same goes to the parameter d.
+     .attr('fill', d => d.fill ); // when return value is in the same line like here, simpler coding is possible; the same goes to the parameter d.
 console.log(rect);
+
+const rects =svg.selectAll('rect')
+          .data(data)
+          .attr('width', d => d.width)
+          .attr('height', d => d.height)
+          .attr('fill', d => d.fill)
+
+console.log(rects)
