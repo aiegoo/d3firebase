@@ -1,5 +1,7 @@
 const data = [
-     {width: 200, height: 400, fill:'pink'}
+     {width: 200, height: 400, fill:'pink'},
+     {width: 100, height: 60, fill:'yellow'},
+     {width: 50, height: 30, fill:'red'}
 ];
 
 const svg = d3.select('svg');
