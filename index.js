@@ -20,6 +20,7 @@ const rect = svg.select('rect')
      .attr('fill', d => d.fill ); // when return value is in the same line like here, simpler coding is possible; the same goes to the parameter d.
 console.log(rect);
 
+// Enter selection, with virtual ele to match missling rect objects but to enter attr to the dome
 const rects =svg.selectAll('rect')
           .data(data)
           .attr('width', d => d.width)
@@ -27,3 +28,10 @@ const rects =svg.selectAll('rect')
           .attr('fill', d => d.fill)
 
 console.log(rects)
+
+rects.enter() // in the dome, it will create an _enter array with empty nodes
+          .append('rect')
+          .attr("width", d => d.width)
+          .attr('height', d => d.height)
+          .attr('fill', d => d.fill)
+
