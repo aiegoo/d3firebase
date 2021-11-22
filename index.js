@@ -8,7 +8,9 @@ d3.json('menu.json').then(data => {
           .range([0, 500]);
      const x = d3.scaleBand()
           .domain(data.map(item => item.name))
-          .range([0, 500]);
+          .range([0, 500])
+          .paddingInner(0.2)
+          .paddingOuter(0.2);
 console.log(data.map(item => item.name))
 console.log(x('veg curry'));
 console.log(x.bandwidth())
@@ -17,18 +19,18 @@ console.log(y(1))
 console.log(y(950))
 const rects = svg.selectAll('rect')
      .data(data)
-rects.attr('width', 50)
+rects.attr('width', x.bandwidth)
      .attr('height', d => y(d.orders))
      .attr('fill', 'orange')
-     .attr('x', (d, i) => i * 70)
+     .attr('x', d => x(d.name));
 
 console.log(rects)
 
 rects.enter()
      .append('rect')
-          .attr('width', 50)
+          .attr('width', x.bandwidth)
           .attr('height', d => y(d.orders))
           .attr('fill', 'hotPink')
-          .attr('x', (d, i) => i * 70)
+          .attr('x', d => x(d.name));
 })
 
