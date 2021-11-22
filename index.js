@@ -6,6 +6,12 @@ d3.json('menu.json').then(data => {
      const y = d3.scaleLinear()
           .domain([0, 1000])
           .range([0, 500]);
+     const x = d3.scaleBand()
+          .domain(data.map(item => item.name))
+          .range([0, 500]);
+console.log(data.map(item => item.name))
+console.log(x('veg curry'));
+console.log(x.bandwidth())
 console.log(y(400))
 console.log(y(1))
 console.log(y(950))
