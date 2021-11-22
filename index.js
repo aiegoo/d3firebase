@@ -7,13 +7,13 @@ const svg = d3.select('svg');
 const rect = svg.select('rect')
      .data(data)
      .attr('width', (d, i , n) => { 
-          console.log(this)
+          console.log(n[i])
           console.log(i)
           console.log(n)
-          return d.width  
+          return d.width  // if return is not in the same line
      })
      .attr('height', function(d){ 
           console.log(this)
           return d.height })
-     .attr('fill', function(d){ return d.fill });
+     .attr('fill', d => d.fill ); // when return value is in the same line like here, simpler coding is possible; same goes to the parameter d.
 console.log(rect);
